@@ -1,0 +1,455 @@
+
+.why-optimising {
+  --why-blue: #203a91;
+  --why-purple: #873de0;
+  --why-pink: #f02bb7;
+  --why-line: rgba(65, 111, 205, 0.2);
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 95px 0 42px;
+  background: #fff;
+  color: #30303a;
+  font-family: "Poppins", sans-serif;
+}
+
+.why-optimising,
+.why-optimising * {
+  box-sizing: border-box;
+}
+
+.why-optimising-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at 12% 15%,
+      rgba(126, 72, 230, 0.055),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 88% 78%,
+      rgba(44, 134, 239, 0.06),
+      transparent 30%
+    );
+  animation: whyBackgroundGlow 9s ease-in-out infinite alternate;
+}
+
+.why-optimising-container {
+  width: min(1240px, 92%);
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.why-optimising-heading {
+  max-width: 900px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+.why-optimising-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--why-purple);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.why-optimising-heading h2 {
+  margin: 0;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -1.8px;
+}
+
+.why-gradient-text {
+  color: var(--why-purple);
+  background: linear-gradient(
+    100deg,
+    var(--why-pink),
+    var(--why-purple),
+    #2161bb
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: whyGradientMove 5s ease-in-out infinite alternate;
+}
+
+.why-optimising-heading > p {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: #777782;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Six-cell grid */
+
+.why-optimising-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(245px, auto));
+  isolation: isolate;
+}
+
+/* Grid lines */
+
+.why-grid-line {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(83, 211, 227, 0.13),
+    rgba(55, 91, 190, 0.65),
+    rgba(83, 211, 227, 0.13)
+  );
+}
+
+.why-grid-line-horizontal {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  transform-origin: left center;
+}
+
+.why-grid-line-vertical {
+  top: 0;
+  width: 1.5px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(83, 211, 227, 0.12),
+    rgba(55, 91, 190, 0.65),
+    rgba(83, 211, 227, 0.12)
+  );
+  transform-origin: center top;
+}
+
+.why-line-one {
+  left: 33.333%;
+}
+
+.why-line-two {
+  left: 66.666%;
+}
+
+/* Diamond intersections */
+
+.why-grid-diamond {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--why-blue);
+  border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 0 5px rgba(32, 58, 145, 0.035);
+  animation: whyDiamondPulse 3s ease-in-out infinite;
+}
+
+.why-diamond-one {
+  left: 33.333%;
+}
+
+.why-diamond-two {
+  left: 66.666%;
+  animation-delay: 0.8s;
+}
+
+/* Cards */
+
+.why-optimising-card {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 22px;
+  text-align: center;
+  opacity: 0;
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.why-optimising-card:hover {
+  background: rgba(244, 245, 255, 0.55);
+  transform: translateY(-4px);
+}
+
+.why-card-number {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  color: #b7b7c5;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.why-icon-wrap {
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  margin-bottom: 17px;
+  border: 1px solid rgba(45, 71, 155, 0.1);
+  border-radius: 18px;
+  background: linear-gradient(
+    145deg,
+    rgba(234, 240, 255, 0.8),
+    rgba(255, 255, 255, 0.95)
+  );
+  box-shadow: 0 7px 22px rgba(40, 67, 145, 0.045);
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.why-card-icon {
+  width: 31px;
+  height: 31px;
+  color: var(--why-blue);
+  stroke-width: 1.5;
+  transition:
+    color 0.35s ease,
+    transform 0.4s ease;
+}
+
+.why-optimising-card:hover .why-icon-wrap {
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(135deg, #fbe8fa, #e7edff);
+  box-shadow: 0 10px 25px rgba(91, 67, 180, 0.12);
+}
+
+.why-optimising-card:hover .why-card-icon {
+  color: var(--why-purple);
+  transform: rotate(-5deg);
+}
+
+.why-optimising-card h3 {
+  margin: 0;
+  font-size: clamp(15px, 1.5vw, 20px);
+  font-weight: 500;
+  line-height: 1.45;
+  letter-spacing: -0.35px;
+}
+
+.why-optimising-card > p {
+  max-width: 310px;
+  margin: 10px auto 0;
+  color: #777782;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+.why-card-accent {
+  position: absolute;
+  bottom: 20px;
+  width: 0;
+  height: 2px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--why-pink), var(--why-blue));
+  transition: width 0.35s ease;
+}
+
+.why-optimising-card:hover .why-card-accent {
+  width: 40px;
+}
+
+/* Footer */
+
+.why-optimising-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 40px;
+  color: #898997;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-align: center;
+}
+
+.why-footer-dot {
+  width: 5px;
+  height: 5px;
+  flex: 0 0 5px;
+  border-radius: 50%;
+  background: var(--why-purple);
+  box-shadow: 0 0 12px rgba(135, 61, 224, 0.5);
+}
+
+/* Animations */
+
+@keyframes whyGradientMove {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: 100% center;
+  }
+}
+
+@keyframes whyDiamondPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(32, 58, 145, 0.035);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(32, 58, 145, 0.07);
+  }
+}
+
+@keyframes whyBackgroundGlow {
+  from {
+    opacity: 0.55;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .why-optimising {
+    padding-top: 75px;
+  }
+
+  .why-optimising-heading {
+    margin-bottom: 35px;
+  }
+
+  .why-optimising-grid {
+    grid-template-rows: repeat(2, minmax(225px, auto));
+  }
+
+  .why-optimising-card {
+    padding: 30px 15px;
+  }
+
+  .why-optimising-card > p {
+    font-size: 11px;
+  }
+}
+
+/* Mobile: 2 columns */
+
+@media (max-width: 600px) {
+  .why-optimising {
+    padding: 65px 0 30px;
+  }
+
+  .why-optimising-container {
+    width: 92%;
+  }
+
+  .why-optimising-heading {
+    margin-bottom: 28px;
+  }
+
+  .why-optimising-heading h2 {
+    font-size: clamp(27px, 7.5vw, 36px);
+    letter-spacing: -1px;
+  }
+
+  .why-optimising-heading > p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .why-optimising-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(205px, auto));
+  }
+
+  .why-grid-line-horizontal {
+    display: none;
+  }
+
+  .why-grid-line-vertical {
+    left: 50%;
+  }
+
+  .why-line-two {
+    display: none;
+  }
+
+  .why-grid-diamond {
+    display: none;
+  }
+
+  .why-optimising-card {
+    padding: 28px 10px;
+  }
+
+  .why-card-number {
+    top: 10px;
+    right: 10px;
+    font-size: 9px;
+  }
+
+  .why-icon-wrap {
+    width: 54px;
+    height: 54px;
+    margin-bottom: 13px;
+    border-radius: 15px;
+  }
+
+  .why-card-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .why-optimising-card h3 {
+    font-size: 14px;
+  }
+
+  .why-optimising-card > p {
+    margin-top: 8px;
+    font-size: 10px;
+    line-height: 1.7;
+  }
+
+  .why-card-accent {
+    bottom: 12px;
+  }
+
+  .why-optimising-footer {
+    gap: 9px;
+    margin-top: 28px;
+    font-size: 7px;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .why-optimising *,
+  .why-optimising *::before,
+  .why-optimising *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

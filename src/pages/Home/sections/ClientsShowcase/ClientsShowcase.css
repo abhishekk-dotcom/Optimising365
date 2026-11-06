@@ -1,0 +1,314 @@
+
+/* =========================================
+   OPTIMISING365 CLIENTS SHOWCASE
+========================================= */
+
+.clients-showcase {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  padding: 65px 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #f3f0f3;
+}
+
+.clients-showcase-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: rgba(243, 240, 243, 0.58);
+  pointer-events: none;
+}
+
+.clients-showcase-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.clients-showcase-title {
+  margin: 0 0 35px;
+  text-align: center;
+  color: #101010;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+/* Logo rows */
+
+.clients-logo-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+.clients-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fade edges */
+
+.clients-marquee::before,
+.clients-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 45px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.clients-marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #f3f0f3, transparent);
+}
+
+.clients-marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #f3f0f3, transparent);
+}
+
+/* Moving track */
+
+.clients-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  flex-shrink: 0;
+  will-change: transform;
+}
+
+.move-left .clients-marquee-track {
+  animation: clientsMoveLeft 35s linear infinite;
+}
+
+.move-right .clients-marquee-track {
+  animation: clientsMoveRight 38s linear infinite;
+}
+
+.clients-marquee:hover .clients-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Equal logo positions */
+
+.client-logo-card {
+  width: 150px;
+  height: 65px;
+  flex: 0 0 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 15px;
+  box-sizing: border-box;
+
+  background: transparent;
+  border: none;
+  overflow: visible;
+
+  transition: transform 0.3s ease;
+}
+
+/* Natural image dimensions with equal visual height */
+
+.client-logo-image {
+  display: block;
+
+  width: auto;
+  height: 38px;
+
+  max-width: 115px;
+  max-height: 38px;
+
+  object-fit: contain;
+  object-position: center;
+
+  filter: grayscale(100%);
+  opacity: 0.8;
+
+  transform: scale(1);
+  transition:
+    filter 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Hover */
+
+.client-logo-card:hover {
+  z-index: 3;
+  transform: translateY(-3px);
+}
+
+.client-logo-card:hover .client-logo-image {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.12);
+}
+
+/* Animations */
+
+@keyframes clientsMoveLeft {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes clientsMoveRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .client-logo-card {
+    width: 125px;
+    flex-basis: 125px;
+  }
+
+  .client-logo-image {
+    height: 34px;
+    max-width: 100px;
+    max-height: 34px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .clients-showcase {
+    min-height: 280px;
+    padding: 45px 0;
+  }
+
+  .clients-showcase-title {
+    margin-bottom: 25px;
+  }
+
+  .clients-logo-rows {
+    gap: 18px;
+  }
+
+  .client-logo-card {
+    width: 105px;
+    height: 55px;
+    flex-basis: 105px;
+    padding: 5px 10px;
+  }
+
+  .client-logo-image {
+    height: 30px;
+    max-width: 85px;
+    max-height: 30px;
+  }
+
+  .move-left .clients-marquee-track {
+    animation-duration: 28s;
+  }
+
+  .move-right .clients-marquee-track {
+    animation-duration: 30s;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .move-left .clients-marquee-track,
+  .move-right .clients-marquee-track {
+    animation: none;
+  }
+}
+
+
+
+/* =========================================
+   FIX: REDUCE LOGO GAP + INCREASE PNG SIZE
+========================================= */
+
+/* Reduce vertical space between rows */
+.clients-logo-rows {
+  gap: 12px !important;
+}
+
+/* Reduce horizontal space between logos */
+.clients-marquee-track {
+  gap: 10px !important;
+}
+
+/* Reduce each logo's allocated space */
+.client-logo-card {
+  width: 125px !important;
+  height: 75px !important;
+  flex: 0 0 125px !important;
+  padding: 2px !important;
+  margin: 0 !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make actual PNG logos bigger */
+.client-logo-image {
+  width: 100% !important;
+  height: 58px !important;
+
+  max-width: 123px !important;
+  max-height: 58px !important;
+
+  object-fit: contain !important;
+  object-position: center !important;
+
+  transform: scale(1.08);
+}
+
+/* Original colour on hover */
+.client-logo-card:hover .client-logo-image {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.16);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .clients-logo-rows {
+    gap: 8px !important;
+  }
+
+  .clients-marquee-track {
+    gap: 8px !important;
+  }
+
+  .client-logo-card {
+    width: 105px !important;
+    height: 62px !important;
+    flex-basis: 105px !important;
+  }
+
+  .client-logo-image {
+    height: 48px !important;
+    max-width: 103px !important;
+    max-height: 48px !important;
+  }
+}

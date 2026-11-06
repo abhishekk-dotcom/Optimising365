@@ -1,0 +1,11 @@
+.image-reveal {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-reveal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

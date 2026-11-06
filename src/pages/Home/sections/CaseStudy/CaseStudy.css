@@ -1,0 +1,114 @@
+.case-study {
+  position: relative;
+  width: 100%;
+  background: #1c1d20;
+  color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+/* Full-screen pinned stage */
+.case-study__stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  overflow: hidden;
+  background: #1c1d20;
+}
+
+.case-study__slides {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.case-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.case-slide__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform;
+}
+
+/* Optional subtle overlay for readable text */
+.case-slide__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+/* Keep labels over the image */
+.case-study__top,
+.case-study__bottom {
+  position: absolute;
+  z-index: 20;
+  left: 5%;
+  right: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.case-study__top {
+  top: 30px;
+}
+
+.case-study__bottom {
+  bottom: 30px;
+}
+
+/* Content over each image */
+.case-slide__content {
+  position: absolute;
+  z-index: 2;
+  right: 5%;
+  bottom: 8%;
+  left: 5%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 600px) {
+  .case-study__stage {
+    min-height: 500px;
+  }
+
+  .case-study__top {
+    top: 20px;
+  }
+
+  .case-study__bottom {
+    bottom: 20px;
+  }
+
+  .case-slide__content {
+    right: 5%;
+    bottom: 7%;
+    left: 5%;
+  }
+}
+

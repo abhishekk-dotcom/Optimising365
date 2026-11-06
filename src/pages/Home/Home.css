@@ -1,0 +1,54 @@
+
+/* =========================================================
+   OPTIMISING365
+   HOME PAGE — GLOBAL STYLES
+   ========================================================= */
+
+/* Home page wrapper */
+.home {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-x: clip;
+
+  background: #ffffff;
+
+  color: #080808;
+}
+
+/* Keep sections full width */
+.home section {
+  position: relative;
+  width: 100%;
+}
+
+/* Consistent box sizing */
+.home,
+.home *,
+.home *::before,
+.home *::after {
+  box-sizing: border-box;
+}
+
+/* Responsive media */
+.home img,
+.home video {
+  max-width: 100%;
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .home *,
+  .home *::before,
+  .home *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

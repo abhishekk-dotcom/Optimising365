@@ -1,0 +1,452 @@
+
+/* =========================================
+   OPTIMISING365 — SERVICES PANELS
+========================================= */
+
+.services-panels-section {
+  width: 100%;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+.service-panel {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 7% 65px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.service-panel--dark {
+  background: #101114;
+  color: #fff;
+}
+
+.service-panel--light {
+  background: #f7f7f5;
+  color: #111318;
+}
+
+.service-panel__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: clamp(40px, 7vw, 110px);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.service-panel__content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.service-panel__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 32px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.service-panel--dark .service-panel__eyebrow {
+  color: #aaa;
+}
+
+.service-panel--light .service-panel__eyebrow {
+  color: #666;
+}
+
+.service-panel__eyebrow span:first-child {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 11px;
+}
+
+.service-panel__heading {
+  margin: 0;
+  font-size: clamp(42px, 5.3vw, 78px);
+  font-weight: 700;
+  line-height: 1.03;
+  letter-spacing: -0.065em;
+}
+
+.service-panel--dark .service-panel__heading span {
+  color: #d5e54b;
+}
+
+.service-panel--light .service-panel__heading span {
+  color: #2478ed;
+}
+
+.service-panel__description {
+  max-width: 520px;
+  margin: 27px 0 0;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.service-panel--dark .service-panel__description {
+  color: #b9b9bd;
+}
+
+.service-panel--light .service-panel__description {
+  color: #62636a;
+}
+
+/* =========================================
+   SERVICE POINTS
+========================================= */
+
+.service-panel__points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px 20px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-panel__point {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.service-panel--dark .service-panel__point {
+  color: #e1e1e3;
+}
+
+.service-panel--light .service-panel__point {
+  color: #393a40;
+}
+
+.service-panel__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.service-panel--dark .service-panel__check {
+  background: #d5e54b;
+  color: #111;
+}
+
+.service-panel--light .service-panel__check {
+  background: #2478ed;
+  color: #fff;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.service-panel__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  min-height: 52px;
+  margin-top: 36px;
+  padding: 6px 7px 6px 20px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-panel--dark .service-panel__button {
+  background: #d5e54b;
+  color: #101114;
+}
+
+.service-panel--light .service-panel__button {
+  background: #111318;
+  color: #fff;
+}
+
+.service-panel__button span {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  font-size: 18px;
+}
+
+.service-panel--dark .service-panel__button span {
+  background: #111318;
+  color: #d5e54b;
+}
+
+.service-panel--light .service-panel__button span {
+  background: #2478ed;
+  color: #fff;
+}
+
+.service-panel__button:hover {
+  transform: translateY(-4px);
+}
+
+/* =========================================
+   IMAGE AREA
+========================================= */
+
+.service-panel__visual {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  max-width: 620px;
+  margin-left: auto;
+}
+
+.service-panel__image-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: clamp(350px, 42vw, 560px);
+  overflow: hidden;
+  border-radius: 3px;
+  background: #252525;
+}
+
+.service-panel__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  will-change: transform, clip-path;
+}
+
+.service-panel__image-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.service-panel__visual-circle {
+  position: absolute;
+  z-index: 0;
+  top: -35px;
+  right: -35px;
+  width: 180px;
+  height: 180px;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.service-panel--dark .service-panel__visual-circle {
+  border-color: rgba(213, 229, 75, 0.3);
+}
+
+/* =========================================
+   BOTTOM LABEL
+========================================= */
+
+.service-panel__bottom {
+  position: absolute;
+  right: 7%;
+  bottom: 30px;
+  left: 7%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.service-panel--dark .service-panel__bottom {
+  color: #77787c;
+}
+
+.service-panel--light .service-panel__bottom {
+  color: #85858a;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .service-panel {
+    padding: 115px 5% 80px;
+  }
+
+  .service-panel__inner {
+    gap: 35px;
+  }
+
+  .service-panel__heading {
+    font-size: clamp(38px, 6vw, 58px);
+  }
+
+  .service-panel__image-wrap {
+    height: 390px;
+  }
+
+  .service-panel__points {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .service-panel {
+    min-height: auto;
+    padding: 105px 23px 85px;
+  }
+
+  .service-panel__inner {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .service-panel__eyebrow {
+    margin-bottom: 23px;
+    font-size: 8px;
+  }
+
+  .service-panel__heading {
+    font-size: clamp(39px, 10vw, 55px);
+    line-height: 1.08;
+  }
+
+  .service-panel__description {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .service-panel__points {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 23px;
+  }
+
+  .service-panel__point {
+    font-size: 11px;
+  }
+
+  .service-panel__button {
+    margin-top: 26px;
+  }
+
+  .service-panel__visual {
+    width: 100%;
+  }
+
+  .service-panel__image-wrap {
+    height: 340px;
+  }
+
+  .service-panel__visual-circle {
+    top: -18px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .service-panel__bottom {
+    right: 23px;
+    bottom: 25px;
+    left: 23px;
+    font-size: 7px;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-panel__button {
+    transition: none;
+  }
+}
+
+
+/* =========================================
+   OPTIMISING365 — PINK THEME OVERRIDE
+========================================= */
+
+/* Dark section heading accent */
+.service-panel--dark .service-panel__heading span {
+  color: #ec4899;
+}
+
+/* Dark section service check icons */
+.service-panel--dark .service-panel__check {
+  background: #ec4899;
+  color: #ffffff;
+}
+
+/* Dark section CTA */
+.service-panel--dark .service-panel__button {
+  background: #ec4899;
+  color: #ffffff;
+}
+
+.service-panel--dark .service-panel__button span {
+  background: #ffffff;
+  color: #ec4899;
+}
+
+/* Dark section decorative circle */
+.service-panel--dark .service-panel__visual-circle {
+  border-color: rgba(236, 72, 153, 0.35);
+}
+
+/* CTA hover */
+.service-panel--dark .service-panel__button:hover {
+  background: #db2777;
+}
+
+/* Optional pink selection color */
+.service-panel ::selection {
+  background: #ec4899;
+  color: #ffffff;
+}

@@ -1,0 +1,394 @@
+
+/* =========================================
+   OPTIMISING365 — LOADING SCREEN
+========================================= */
+
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+
+  overflow: hidden;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+  isolation: isolate;
+}
+
+/* =========================================
+   CENTER CONTENT
+========================================= */
+
+.loader-center {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: min(90%, 460px);
+}
+
+/* =========================================
+   BACKGROUND PASTEL GLOWS
+========================================= */
+
+.loader-glow {
+  position: absolute;
+  z-index: -1;
+
+  width: 340px;
+  height: 340px;
+
+  border-radius: 50%;
+  filter: blur(85px);
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.loader-glow-top {
+  top: -190px;
+  right: -100px;
+  background: #f6b7ff;
+}
+
+.loader-glow-bottom {
+  bottom: -200px;
+  left: -120px;
+  background: #b6a0ff;
+}
+
+/* =========================================
+   GRADIENT RING
+========================================= */
+
+.loader-ring {
+  --progress: 0deg;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+  transform: translate(-50%, -62%);
+
+  background: conic-gradient(
+    from -90deg,
+    #8b35ff 0deg,
+    #e638b8 120deg,
+    #ff9b48 240deg,
+    #8b35ff 360deg
+  );
+
+  opacity: 0.75;
+
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 1px)
+  );
+
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 1px)
+  );
+
+  filter: drop-shadow(0 0 8px #c98aff55);
+}
+
+/* Progress arc inside the ring */
+
+.loader-ring-inner {
+  position: absolute;
+  inset: 0;
+
+  border-radius: 50%;
+
+  background: conic-gradient(
+    from -90deg,
+    #8b35ff 0deg,
+    #e638b8 var(--progress),
+    transparent var(--progress)
+  );
+
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* =========================================
+   ORBITING ORB
+========================================= */
+
+.loader-orbit {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.loader-orb {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+
+  width: 13px;
+  height: 13px;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #b235ff,
+    #ff4eb8,
+    #ff9a42
+  );
+
+  box-shadow: 0 0 16px #bf55ff99;
+  transform: translateX(-50%);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.loader-logo-wrap {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin-bottom: 32px;
+
+  will-change: transform, opacity;
+}
+
+.loader-logo {
+  display: block;
+
+  width: min(100%, 340px);
+  max-height: 110px;
+
+  object-fit: contain;
+  object-position: center;
+}
+
+/* =========================================
+   LOADING LABEL
+========================================= */
+
+.loader-caption {
+  margin: 4px 0 20px;
+  padding-left: 0.65em;
+
+  color: #77717f;
+
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.65em;
+  text-align: center;
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.loader-progress-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  width: min(100%, 290px);
+}
+
+.loader-progress-track {
+  flex: 1;
+  width: 100%;
+  height: 5px;
+
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eeeaf2;
+}
+
+.loader-progress-fill {
+  width: 0%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: linear-gradient(
+    90deg,
+    #8b35ff,
+    #e638b8,
+    #ff9b48
+  );
+
+  box-shadow: 0 0 12px #c35aff55;
+  will-change: width;
+}
+
+.loader-percentage {
+  min-width: 35px;
+
+  color: #6d6677;
+
+  font-size: 11px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.loader-tagline {
+  margin: 20px 0 0;
+
+  color: #a29ba9;
+
+  font-size: 10px;
+  letter-spacing: 0.07em;
+  text-align: center;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .loader-ring {
+    width: 320px;
+    height: 320px;
+  }
+
+  .loader-logo {
+    width: min(100%, 300px);
+  }
+
+  .loader-center {
+    width: min(90%, 400px);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .loader-center {
+    width: min(88%, 340px);
+  }
+
+  .loader-ring {
+    width: min(290px, 78vw);
+    height: min(290px, 78vw);
+  }
+
+  .loader-logo-wrap {
+    margin-bottom: 26px;
+  }
+
+  .loader-logo {
+    width: min(100%, 260px);
+    max-height: 85px;
+  }
+
+  .loader-progress-wrap {
+    width: min(100%, 260px);
+  }
+
+  .loader-caption {
+    font-size: 10px;
+    letter-spacing: 0.45em;
+  }
+
+  .loader-tagline {
+    max-width: 280px;
+    font-size: 9px;
+    line-height: 1.6;
+  }
+
+  .loader-glow {
+    width: 260px;
+    height: 260px;
+    filter: blur(70px);
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 360px) {
+  .loader-center {
+    width: 88%;
+  }
+
+  .loader-ring {
+    width: 250px;
+    height: 250px;
+  }
+
+  .loader-logo {
+    width: 220px;
+    max-height: 75px;
+  }
+
+  .loader-progress-wrap {
+    width: min(100%, 230px);
+  }
+
+  .loader-caption {
+    letter-spacing: 0.35em;
+  }
+}
+
+/* =========================================
+   SHORT SCREENS
+========================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .loader-center {
+    transform: scale(0.72);
+  }
+
+  .loader-logo-wrap {
+    margin-bottom: 12px;
+  }
+
+  .loader-caption {
+    margin-bottom: 10px;
+  }
+
+  .loader-tagline {
+    margin-top: 10px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-ring {
+    filter: none;
+  }
+}

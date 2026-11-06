@@ -1,0 +1,385 @@
+/* ========================================
+   Contact CTA — Solid Black Background
+======================================== */
+
+.contact-cta {
+  position: relative;
+  width: 100%;
+  padding: 90px 5%;
+  overflow: hidden;
+  background: #080808;
+  color: #f5f5f5;
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-cta *,
+.contact-cta *::before,
+.contact-cta *::after {
+  box-sizing: border-box;
+}
+
+.contact-cta__container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(360px, 0.85fr) minmax(0, 1.15fr);
+  align-items: start;
+  gap: clamp(50px, 8vw, 110px);
+}
+
+/* ========================================
+   Form Card
+======================================== */
+
+.contact-cta__form-card {
+  width: 100%;
+  padding: 48px;
+  background: #171717;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.contact-cta__form-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #a3a3a3;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.contact-cta__form-title {
+  margin: 0 0 28px;
+  color: #f5f5f5;
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.contact-cta__field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.contact-cta__field label {
+  color: #dedede;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.contact-cta__field input,
+.contact-cta__field textarea {
+  width: 100%;
+  padding: 15px 18px;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  background: #202020;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.contact-cta__field input {
+  min-height: 48px;
+  border-radius: 30px;
+}
+
+.contact-cta__field textarea {
+  min-height: 115px;
+  resize: vertical;
+  border-radius: 10px;
+}
+
+.contact-cta__field input:focus,
+.contact-cta__field textarea:focus {
+  background: #242424;
+  border-color: #d5e54b;
+}
+
+.contact-cta__submit {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 2px;
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  background: #050505;
+  border: 1px solid #292929;
+  border-radius: 30px;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-cta__submit:hover {
+  color: #080808;
+  background: #d5e54b;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Right Content
+======================================== */
+
+.contact-cta__content {
+  min-width: 0;
+}
+
+.contact-cta__eyebrow {
+  display: block;
+  margin-bottom: 14px;
+  color: #652e8d;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+}
+
+.contact-cta__intro h2 {
+  margin: 0;
+  color: #f5f5f5;
+  font-size: clamp(52px, 6vw, 76px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -4px;
+}
+
+.contact-cta__intro h2 span {
+  color: #7b2d87;
+}
+
+.contact-cta__intro p {
+  max-width: 570px;
+  margin: 25px 0 0;
+  color: #a8a8a8;
+  font-size: clamp(18px, 2vw, 25px);
+  line-height: 1.55;
+  letter-spacing: -0.5px;
+}
+
+/* ========================================
+   Benefits
+======================================== */
+
+.contact-cta__benefits {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px;
+  margin-top: 55px;
+  padding-top: 38px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.contact-cta__benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 16px;
+  color: #7b2d87;
+  font-size: 22px;
+  border: 1px solid rgba(213, 229, 75, 0.35);
+  border-radius: 50%;
+}
+
+.contact-cta__benefit h3 {
+  margin: 0 0 18px;
+  color: #e8e8e8;
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.contact-cta__benefit p {
+  margin: 0;
+  color: #969696;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* ========================================
+   Team Lead Card
+======================================== */
+
+.contact-cta__team-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 45px;
+  padding: 16px 28px 16px 16px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.contact-cta__team-card:hover {
+  transform: translateY(-5px);
+  background: #1b1b1b;
+  border-color: rgba(213, 229, 75, 0.25);
+}
+
+.contact-cta__team-image {
+  flex: 0 0 145px;
+  width: 145px;
+  height: 165px;
+  overflow: hidden;
+  background: #252525;
+  border-radius: 12px;
+}
+
+.contact-cta__team-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition:
+    filter 0.4s ease,
+    transform 0.5s ease;
+}
+
+.contact-cta__team-card:hover .contact-cta__team-image img {
+  filter: grayscale(0%);
+  transform: scale(1.06);
+}
+
+.contact-cta__team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-cta__team-label,
+.contact-cta__team-company {
+  color: #a5a5a5;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.contact-cta__team-info h3 {
+  margin: 18px 0;
+  color: #ededed;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.contact-cta__team-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 18px;
+  color: #080808;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  background: #7b2d87;
+  border-radius: 30px;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.contact-cta__team-button:hover {
+  background: #7b2d87;
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   Responsive
+======================================== */
+
+@media (max-width: 1000px) {
+  .contact-cta {
+    padding: 70px 5%;
+  }
+
+  .contact-cta__container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 55px;
+  }
+
+  .contact-cta__form-card {
+    max-width: 650px;
+  }
+
+  .contact-cta__content {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-cta {
+    padding: 55px 20px;
+  }
+
+  .contact-cta__form-card {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+
+  .contact-cta__intro h2 {
+    font-size: 52px;
+    letter-spacing: -2.5px;
+  }
+
+  .contact-cta__intro p {
+    margin-top: 18px;
+    font-size: 18px;
+  }
+
+  .contact-cta__benefits {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 38px;
+    padding-top: 30px;
+  }
+
+  .contact-cta__benefit h3 {
+    margin-bottom: 10px;
+  }
+
+  .contact-cta__team-card {
+    width: 100%;
+    gap: 18px;
+    padding: 12px;
+  }
+
+  .contact-cta__team-image {
+    flex-basis: 110px;
+    width: 110px;
+    height: 135px;
+  }
+
+  .contact-cta__team-info h3 {
+    margin: 12px 0;
+    font-size: 15px;
+  }
+
+  .contact-cta__team-button {
+    padding: 9px 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-cta *,
+  .contact-cta *::before,
+  .contact-cta *::after {
+    transition: none !important;
+  }
+}
