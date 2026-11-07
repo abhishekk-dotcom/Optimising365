@@ -1,0 +1,630 @@
+
+/* =========================================
+   CLIENT COLLABORATION SECTION
+========================================= */
+
+.collaboration-section,
+.collaboration-section * {
+  box-sizing: border-box;
+}
+
+.collaboration-section {
+  width: 100%;
+  padding: clamp(55px, 8vw, 110px) clamp(15px, 5.5vw, 80px);
+  background: #f8f8f8;
+  color: #101010;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+}
+
+.collaboration-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.collaboration-heading {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto clamp(35px, 5vw, 65px);
+}
+
+.collaboration-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #be61ac;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.collaboration-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #be61ac;
+  box-shadow: 0 0 0 5px rgba(190, 97, 172, 0.13);
+  animation: collaborationPulse 2s ease-in-out infinite;
+}
+
+@keyframes collaborationPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(190, 97, 172, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(190, 97, 172, 0.04);
+  }
+}
+
+.collaboration-heading h2 {
+  margin: 0;
+  color: #101010;
+  font-size: clamp(36px, 5vw, 65px);
+  line-height: 1.1;
+  letter-spacing: -2.8px;
+  font-weight: 600;
+}
+
+.collaboration-heading h2 span {
+  color: #be61ac;
+}
+
+.collaboration-heading p {
+  max-width: 650px;
+  margin: 18px auto 0;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.9;
+  font-weight: 400;
+}
+
+/* =========================================
+   CLIENT LOGO CANVAS
+========================================= */
+
+.collaboration-canvas {
+  width: 100%;
+  height: clamp(430px, 48vw, 680px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 1.5vw, 18px);
+  overflow: hidden;
+  position: relative;
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 9%,
+    #000 91%,
+    transparent 100%
+  );
+}
+
+/* =========================================
+   MOVING COLUMNS
+========================================= */
+
+.collaboration-column {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.collaboration-track {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vw, 17px);
+  width: 100%;
+  animation: collaborationScroll 27s linear infinite;
+  will-change: transform;
+}
+
+.collaboration-column-1 .collaboration-track {
+  animation-duration: 30s;
+}
+
+.collaboration-column-2 .collaboration-track {
+  animation-duration: 37s;
+  animation-direction: reverse;
+}
+
+.collaboration-column-3 .collaboration-track {
+  animation-duration: 33s;
+}
+
+.collaboration-column-4 .collaboration-track {
+  animation-duration: 40s;
+  animation-direction: reverse;
+}
+
+.collaboration-canvas:hover .collaboration-track {
+  animation-play-state: paused;
+}
+
+@keyframes collaborationScroll {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+/* =========================================
+   LOGO CARDS
+========================================= */
+
+.collaboration-logo-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: clamp(90px, 10vw, 125px);
+  padding: 15px 10px;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+.collaboration-logo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #be61ac;
+  opacity: 0;
+  transform: translateY(100%);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.collaboration-logo-card:hover {
+  transform: translateY(-5px) scale(1.025);
+  border-color: rgba(190, 97, 172, 0.45);
+  box-shadow: 0 14px 30px rgba(16, 16, 16, 0.07);
+  background: #fff;
+}
+
+.collaboration-logo-card:hover::before {
+  opacity: 0.045;
+  transform: translateY(0);
+}
+
+.collaboration-logo-text {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: 100%;
+  text-align: center;
+  overflow-wrap: anywhere;
+  color: #282828;
+  font-size: clamp(12px, 1.3vw, 19px);
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.collaboration-logo-card:hover .collaboration-logo-text {
+  color: #a84f96;
+  transform: scale(1.06);
+}
+
+/* VARIED WORDMARK STYLES */
+
+.logo-serif {
+  font-family: Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+}
+
+.logo-bold {
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo-elegant {
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.logo-modern {
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+.logo-blue {
+  color: #2876b8;
+  font-size: clamp(17px, 2vw, 25px);
+  font-weight: 800;
+}
+
+.logo-minimal {
+  font-size: clamp(10px, 1vw, 14px);
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+/* CARD ARROW */
+
+.collaboration-card-arrow {
+  position: absolute;
+  z-index: 2;
+  right: 10px;
+  bottom: 8px;
+  font-size: 13px;
+  color: #be61ac;
+  opacity: 0;
+  transform: translate(-5px, 5px);
+  transition: all 0.3s ease;
+}
+
+.collaboration-logo-card:hover .collaboration-card-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* =========================================
+   BOTTOM FOOTER
+========================================= */
+
+.collaboration-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid #e8e8e8;
+  color: #888888;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .collaboration-section {
+    padding: 70px 4%;
+  }
+
+  .collaboration-canvas {
+    height: 500px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .collaboration-column-4 {
+    display: none;
+  }
+
+  .collaboration-logo-card {
+    min-height: 105px;
+  }
+
+  .collaboration-heading h2 {
+    font-size: clamp(36px, 6vw, 55px);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .collaboration-section {
+    padding: 55px 16px;
+  }
+
+  .collaboration-heading {
+    margin-bottom: 30px;
+  }
+
+  .collaboration-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .collaboration-heading h2 {
+    font-size: clamp(32px, 8.5vw, 45px);
+    letter-spacing: -1.8px;
+  }
+
+  .collaboration-heading p {
+    max-width: 450px;
+    padding: 0 5px;
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .collaboration-canvas {
+    height: 430px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .collaboration-column-4 {
+    display: block;
+  }
+
+  .collaboration-logo-card {
+    min-height: 95px;
+    border-radius: 7px;
+    padding: 10px 7px;
+  }
+
+  .collaboration-logo-text {
+    font-size: 13px;
+  }
+
+  .logo-blue {
+    font-size: 17px;
+  }
+
+  .collaboration-track {
+    gap: 10px;
+  }
+
+  .collaboration-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 8px;
+    gap: 9px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .collaboration-section {
+    padding: 45px 12px;
+  }
+
+  .collaboration-heading h2 {
+    font-size: 31px;
+    letter-spacing: -1.5px;
+  }
+
+  .collaboration-canvas {
+    height: 370px;
+    gap: 8px;
+  }
+
+  .collaboration-logo-card {
+    min-height: 82px;
+    padding: 8px 5px;
+  }
+
+  .collaboration-logo-text {
+    font-size: 11px;
+  }
+
+  .logo-blue {
+    font-size: 15px;
+  }
+
+  .collaboration-track {
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .collaboration-track {
+    animation: none;
+  }
+
+  .collaboration-dot {
+    animation: none;
+  }
+
+  .collaboration-logo-card,
+  .collaboration-logo-text,
+  .collaboration-card-arrow {
+    transition: none;
+  }
+}
+
+
+
+/* =========================================
+   IMAGE CLIENT CARDS
+========================================= */
+
+.collaboration-logo-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  height: clamp(140px, 17vw, 220px);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+  isolation: isolate;
+  cursor: pointer;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.collaboration-logo-card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.collaboration-logo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.collaboration-logo-card:hover > img {
+  transform: scale(1.12);
+}
+
+/* IMAGE OVERLAY */
+
+.collaboration-image-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.15) 55%,
+    transparent 100%
+  );
+  transition: background 0.4s ease;
+}
+
+.collaboration-logo-card:hover .collaboration-image-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(130, 48, 115, 0.9),
+    rgba(0, 0, 0, 0.08)
+  );
+}
+
+/* CLIENT INFORMATION */
+
+.collaboration-client-info {
+  position: relative;
+  z-index: 2;
+  transform: translateY(5px);
+  transition: transform 0.4s ease;
+}
+
+.collaboration-logo-card:hover .collaboration-client-info {
+  transform: translateY(0);
+}
+
+.collaboration-client-info span {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.collaboration-client-info h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(14px, 1.5vw, 20px);
+  font-weight: 600;
+}
+
+/* ARROW */
+
+.collaboration-card-arrow {
+  position: relative;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #be61ac;
+  color: #101010;
+  font-size: 17px;
+  opacity: 0;
+  transform: translate(8px, 8px);
+  transition: all 0.4s ease;
+}
+
+.collaboration-logo-card:hover .collaboration-card-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* =========================================
+   RESPONSIVE IMAGE CARDS
+========================================= */
+
+@media (max-width: 900px) {
+  .collaboration-logo-card {
+    height: 170px;
+  }
+}
+
+@media (max-width: 600px) {
+  .collaboration-logo-card {
+    height: 145px;
+    border-radius: 8px;
+  }
+
+  .collaboration-image-overlay {
+    padding: 11px;
+  }
+
+  .collaboration-client-info h3 {
+    font-size: 13px;
+  }
+
+  .collaboration-client-info span {
+    font-size: 8px;
+  }
+
+  .collaboration-card-arrow {
+    width: 25px;
+    height: 25px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .collaboration-logo-card {
+    height: 125px;
+  }
+
+  .collaboration-image-overlay {
+    padding: 8px;
+  }
+
+  .collaboration-client-info h3 {
+    font-size: 11px;
+  }
+}

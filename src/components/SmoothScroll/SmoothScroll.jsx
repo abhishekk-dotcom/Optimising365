@@ -10,6 +10,7 @@ function SmoothScroll() {
     });
 
     let animationFrame;
+    
 
     const raf = (time) => {
       lenis.raf(time);

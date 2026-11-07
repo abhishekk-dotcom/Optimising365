@@ -4,12 +4,13 @@ import { Routes, Route } from "react-router-dom";
 
 import SmoothScroll from "./components/SmoothScroll/SmoothScroll";
 import Navbar from "./components/Navbar/Navbar";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Services from "./pages/Services/Services";
-
-import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import Clients from "./pages/Clients/Clients";
 
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App() {
 
   const handleLoadingComplete = useCallback(() => {
     setIsLoading(false);
+    setShowLoader(false);
   }, []);
 
   useEffect(() => {
@@ -52,6 +54,8 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
+
       <SmoothScroll />
 
       <Navbar />
@@ -59,10 +63,19 @@ function App() {
       <main className="app-content">
         <Routes>
           <Route path="/" element={<Home />} />
-
           <Route path="/about" element={<About />} />
-
           <Route path="/services" element={<Services />} />
+          <Route path="/clients" element={<Clients />} />
+
+          <Route
+            path="*"
+            element={
+              <div style={{ padding: "100px 20px", textAlign: "center" }}>
+                <h1>404 - Page Not Found</h1>
+                <p>The page you are looking for does not exist.</p>
+              </div>
+            }
+          />
         </Routes>
       </main>
 

@@ -1,0 +1,567 @@
+
+/* =========================================
+   OPTIMISING365 CLIENT REVIEWS
+========================================= */
+
+.clients-reviews,
+.clients-reviews * {
+  box-sizing: border-box;
+}
+
+.clients-reviews {
+  position: relative;
+  width: 100%;
+  padding: clamp(75px, 9vw, 125px) 20px 35px;
+  overflow: hidden;
+  background: #ffffff;
+  color: #101010;
+  font-family: "Poppins", sans-serif;
+}
+
+.clients-reviews::before {
+  content: "";
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(190, 97, 172, 0.035);
+  filter: blur(70px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.clients-reviews-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.clients-reviews-heading {
+  max-width: 650px;
+  margin: 0 auto 55px;
+  text-align: center;
+  animation: reviewsHeaderReveal 0.9s ease both;
+}
+
+.reviews-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #be61ac;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.reviews-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #be61ac;
+  box-shadow: 0 0 0 5px rgba(190, 97, 172, 0.12);
+  animation: reviewsDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes reviewsDotPulse {
+  50% {
+    box-shadow: 0 0 0 10px rgba(190, 97, 172, 0.02);
+  }
+}
+
+.clients-reviews-heading h2 {
+  margin: 0;
+  color: #101010;
+  font-size: clamp(35px, 5vw, 58px);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -2.5px;
+}
+
+.clients-reviews-heading h2 span {
+  color: #be61ac;
+}
+
+.clients-reviews-heading p {
+  max-width: 480px;
+  margin: 18px auto 0;
+  color: #777777;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   SLIDER LAYOUT
+========================================= */
+
+.reviews-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 850px;
+  min-height: 330px;
+  margin: 0 auto;
+  padding: 20px 75px;
+}
+
+/* =========================================
+   REVIEW CONTENT
+========================================= */
+
+.reviews-content {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  text-align: center;
+  animation: reviewSlideNext 0.65s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.reviews-content[data-direction="previous"] {
+  animation-name: reviewSlidePrevious;
+}
+
+@keyframes reviewSlideNext {
+  from {
+    opacity: 0;
+    transform: translateX(35px) translateY(10px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes reviewSlidePrevious {
+  from {
+    opacity: 0;
+    transform: translateX(-35px) translateY(10px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.reviews-quote-mark {
+  height: 55px;
+  color: #be61ac;
+  font-family: Georgia, serif;
+  font-size: 90px;
+  line-height: 1;
+  opacity: 0.65;
+  animation: quoteMarkReveal 0.7s ease both;
+}
+
+@keyframes quoteMarkReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.8);
+  }
+
+  to {
+    opacity: 0.65;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   STARS
+========================================= */
+
+.reviews-stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0 20px;
+}
+
+.reviews-stars span {
+  color: #f4b544;
+  font-size: 16px;
+  animation: reviewStarReveal 0.5s ease both;
+}
+
+.reviews-stars span:nth-child(2) {
+  animation-delay: 0.06s;
+}
+
+.reviews-stars span:nth-child(3) {
+  animation-delay: 0.12s;
+}
+
+.reviews-stars span:nth-child(4) {
+  animation-delay: 0.18s;
+}
+
+.reviews-stars span:nth-child(5) {
+  animation-delay: 0.24s;
+}
+
+@keyframes reviewStarReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================================
+   REVIEW TEXT
+========================================= */
+
+.reviews-quote {
+  margin: 0 auto 32px;
+  color: #666666;
+  font-size: clamp(17px, 2.2vw, 24px);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: -0.45px;
+}
+
+/* =========================================
+   AUTHOR
+========================================= */
+
+.reviews-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  text-align: left;
+}
+
+.reviews-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(190, 97, 172, 0.2);
+  border-radius: 50%;
+  background: #f8eef6;
+  color: #be61ac;
+  font-size: 12px;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.reviews-author:hover .reviews-avatar {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.reviews-author-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.reviews-verified {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #be61ac;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+.reviews-author-role,
+.reviews-date {
+  display: block;
+  margin-top: 4px;
+  color: #888888;
+  font-size: 11px;
+}
+
+/* =========================================
+   NAVIGATION ARROWS
+========================================= */
+
+.reviews-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+  background: #e8e8e8;
+  color: #555555;
+
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.reviews-arrow span {
+  font-family: Arial, sans-serif;
+  font-size: 29px;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.reviews-arrow-left {
+  left: 0;
+}
+
+.reviews-arrow-right {
+  right: 0;
+}
+
+.reviews-arrow:hover {
+  background: #be61ac;
+  color: #ffffff;
+  box-shadow: 0 8px 22px rgba(190, 97, 172, 0.25);
+}
+
+.reviews-arrow-left:hover {
+  transform: translate(-3px, -50%);
+}
+
+.reviews-arrow-right:hover {
+  transform: translate(3px, -50%);
+}
+
+.reviews-arrow:focus-visible,
+.reviews-dot:focus-visible {
+  outline: 2px solid #be61ac;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.reviews-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 28px;
+}
+
+.reviews-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.reviews-dot {
+  display: block;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 20px;
+  background: #d8d8d8;
+  cursor: pointer;
+  transition:
+    width 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.reviews-dot:hover {
+  transform: scale(1.3);
+}
+
+.reviews-dot.active {
+  width: 27px;
+  background: #be61ac;
+}
+
+.reviews-counter {
+  color: #777777;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.reviews-counter span {
+  padding: 0 4px;
+  color: #be61ac;
+}
+
+/* =========================================
+   BOTTOM LABEL
+========================================= */
+
+.reviews-bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin-top: 75px;
+  padding-top: 20px;
+  border-top: 1px solid #eeeeee;
+
+  color: #888888;
+  font-size: 9px;
+  letter-spacing: 1.4px;
+}
+
+/* =========================================
+   HEADER ANIMATION
+========================================= */
+
+@keyframes reviewsHeaderReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+  .clients-reviews {
+    padding: 75px 22px 30px;
+  }
+
+  .clients-reviews-heading {
+    margin-bottom: 35px;
+  }
+
+  .reviews-slider {
+    min-height: 360px;
+    padding: 20px 55px;
+  }
+
+  .reviews-quote {
+    font-size: 19px;
+  }
+
+  .reviews-bottom {
+    margin-top: 55px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+  .clients-reviews {
+    padding: 60px 18px 25px;
+  }
+
+  .clients-reviews-heading h2 {
+    font-size: 35px;
+    letter-spacing: -1.5px;
+  }
+
+  .clients-reviews-heading p {
+    font-size: 12px;
+  }
+
+  .reviews-slider {
+    min-height: 390px;
+    padding: 20px 0 60px;
+  }
+
+  .reviews-content {
+    padding: 0 15px;
+  }
+
+  .reviews-quote-mark {
+    height: 45px;
+    font-size: 75px;
+  }
+
+  .reviews-quote {
+    font-size: 16px;
+    line-height: 1.75;
+    margin-bottom: 25px;
+  }
+
+  .reviews-arrow {
+    top: auto;
+    bottom: 0;
+    width: 38px;
+    height: 38px;
+    transform: none;
+  }
+
+  .reviews-arrow-left {
+    left: calc(50% - 55px);
+  }
+
+  .reviews-arrow-right {
+    right: calc(50% - 55px);
+  }
+
+  .reviews-arrow-left:hover,
+  .reviews-arrow-right:hover {
+    transform: translateY(-2px);
+  }
+
+  .reviews-controls {
+    margin-top: 15px;
+  }
+
+  .reviews-bottom {
+    flex-direction: column;
+    margin-top: 40px;
+    font-size: 8px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-reviews *,
+  .clients-reviews *::before,
+  .clients-reviews *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

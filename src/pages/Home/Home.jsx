@@ -34,7 +34,7 @@ function Home() {
       <ContactCTA />
       {/* <CaseStudy /> */}
       <CaseStudies />
-      <FAQ />
+      {/* <FAQ /> */}
       <Footer />
     </main>
   );

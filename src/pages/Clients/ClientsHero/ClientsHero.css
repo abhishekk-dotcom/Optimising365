@@ -1,0 +1,516 @@
+
+/* =========================================
+   OPTIMISING365 CLIENTS HERO
+   Unique gallery classes to avoid conflicts
+========================================= */
+
+.clients-hero,
+.clients-hero * {
+  box-sizing: border-box;
+}
+
+.clients-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 720px;
+  height: calc(100vh - 85px);
+  max-height: 950px;
+  overflow: hidden;
+  background: #f8f8f8;
+  color: #101010;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.clients-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(25px, 3vw, 55px);
+
+  width: 100%;
+  max-width: 1600px;
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+
+  margin: 0 auto;
+  padding: 55px 5.5%;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.clients-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 470px;
+  animation: clientsHeroReveal 1s ease both;
+}
+
+.clients-eyebrow {
+  display: block;
+  margin-bottom: 24px;
+  color: #be61ac;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.clients-hero-content h1 {
+  margin: 0 0 25px;
+  color: #101010;
+  font-size: clamp(48px, 5.2vw, 82px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -4px;
+}
+
+.clients-hero-content h1 span {
+  color: #be61ac;
+}
+
+.clients-hero-content p {
+  max-width: 390px;
+  margin: 0 0 28px;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   LINK
+========================================= */
+
+.clients-hero-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 9px;
+  color: #101010;
+  font-size: 12px;
+  text-decoration: none;
+  border-bottom: 1px solid #be61ac;
+  transition: color 0.3s ease;
+}
+
+.clients-hero-link span {
+  color: #be61ac;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.clients-hero-link:hover {
+  color: #be61ac;
+}
+
+.clients-hero-link:hover span {
+  transform: translate(4px, -4px);
+}
+
+/* =========================================
+   RIGHT GALLERY
+========================================= */
+
+.clients-hero-gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+
+  width: 100%;
+  height: 100%;
+  max-height: 660px;
+  min-height: 480px;
+  min-width: 0;
+
+  gap: 13px;
+  overflow: hidden;
+  background: transparent;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* =========================================
+   INDEPENDENT VERTICAL COLUMNS
+========================================= */
+
+.clients-hero-column {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.clients-hero-track {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 13px;
+
+  animation: clientsHeroVerticalScroll var(--duration) linear infinite;
+  animation-direction: var(--direction);
+  will-change: transform;
+}
+
+/* Pause on hover */
+
+.clients-hero-gallery:hover .clients-hero-track {
+  animation-play-state: paused;
+}
+
+/* Different movement speeds */
+
+.clients-hero-column-1 .clients-hero-track {
+  animation-duration: 30s;
+}
+
+.clients-hero-column-2 .clients-hero-track {
+  animation-duration: 38s;
+}
+
+.clients-hero-column-3 .clients-hero-track {
+  animation-duration: 34s;
+}
+
+/* =========================================
+   VERTICAL INFINITE ANIMATION
+========================================= */
+
+@keyframes clientsHeroVerticalScroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+/* =========================================
+   PROJECT CARDS
+========================================= */
+
+.clients-hero-project-card {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  min-width: 0;
+  padding: 7px;
+
+  overflow: hidden;
+  border: 1px solid #eeeeee;
+  border-radius: 9px;
+  background: #fff;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.clients-hero-project-card:hover {
+  transform: scale(0.97);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   PROJECT IMAGES
+========================================= */
+
+.clients-hero-project-image {
+  width: 100%;
+  height: clamp(125px, 13vw, 165px);
+  overflow: hidden;
+  border-radius: 5px;
+  background: #eae8df;
+}
+
+.clients-hero-project-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s ease;
+}
+
+.clients-hero-project-card:hover .clients-hero-project-image img {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   PROJECT INFORMATION
+========================================= */
+
+.clients-hero-project-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 5px 7px;
+}
+
+.clients-hero-project-info h3 {
+  margin: 0 0 4px;
+  color: #101010;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.clients-hero-project-info span {
+  color: #777;
+  font-size: 9px;
+}
+
+.clients-hero-project-info .clients-hero-project-arrow {
+  flex-shrink: 0;
+  color: #be61ac;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.clients-hero-project-card:hover .clients-hero-project-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   BOTTOM LABEL
+========================================= */
+
+.clients-hero-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  padding: 15px 5.5% 22px;
+  border-top: 1px solid #e5e5e5;
+
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================
+   CONTENT ANIMATION
+========================================= */
+
+@keyframes clientsHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   LARGE DESKTOP
+========================================= */
+
+@media (min-width: 1500px) {
+  .clients-hero-inner {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .clients-hero-gallery {
+    max-height: 720px;
+  }
+
+  .clients-hero-project-image {
+    height: 180px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .clients-hero {
+    height: auto;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .clients-hero-inner {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 75px 6% 45px;
+  }
+
+  .clients-hero-content {
+    max-width: 650px;
+  }
+
+  .clients-hero-content h1 {
+    font-size: clamp(55px, 8vw, 85px);
+  }
+
+  .clients-hero-content p {
+    max-width: 520px;
+  }
+
+  .clients-hero-gallery {
+    height: 500px;
+    max-height: 500px;
+    min-height: 400px;
+  }
+
+  .clients-hero-project-image {
+    height: 150px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .clients-hero-inner {
+    padding: 55px 20px 30px;
+    gap: 35px;
+  }
+
+  .clients-hero-content h1 {
+    font-size: clamp(45px, 12vw, 58px);
+    letter-spacing: -3px;
+  }
+
+  .clients-eyebrow {
+    font-size: 9px;
+    margin-bottom: 18px;
+  }
+
+  .clients-hero-content p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .clients-hero-gallery {
+    height: 390px;
+    max-height: 390px;
+    min-height: 390px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .clients-hero-track {
+    gap: 9px;
+  }
+
+  .clients-hero-project-card {
+    padding: 5px;
+    border-radius: 6px;
+  }
+
+  .clients-hero-project-image {
+    height: 105px;
+  }
+
+  .clients-hero-project-info {
+    padding: 7px 3px 5px;
+  }
+
+  .clients-hero-project-info h3 {
+    font-size: 9px;
+  }
+
+  .clients-hero-project-info span {
+    font-size: 7px;
+  }
+
+  .clients-hero-bottom {
+    padding: 13px 20px;
+    font-size: 7px;
+    letter-spacing: 0.6px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .clients-hero-content h1 {
+    font-size: 44px;
+    letter-spacing: -2.5px;
+  }
+
+  .clients-hero-gallery {
+    height: 340px;
+    max-height: 340px;
+    min-height: 340px;
+    gap: 6px;
+  }
+
+  .clients-hero-track {
+    gap: 7px;
+  }
+
+  .clients-hero-project-image {
+    height: 85px;
+  }
+
+  .clients-hero-project-info h3 {
+    font-size: 8px;
+  }
+
+  .clients-hero-project-info span {
+    font-size: 6px;
+  }
+
+  .clients-hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-hero-content {
+    animation: none;
+  }
+
+  .clients-hero-track {
+    animation: none !important;
+  }
+
+  .clients-hero-project-card,
+  .clients-hero-project-image img {
+    transition: none;
+  }
+}

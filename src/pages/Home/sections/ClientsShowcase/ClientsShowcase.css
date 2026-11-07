@@ -3,86 +3,140 @@
    OPTIMISING365 CLIENTS SHOWCASE
 ========================================= */
 
-.clients-showcase {
-  position: relative;
-  width: 100%;
-  min-height: 350px;
-  padding: 65px 0;
-  overflow: hidden;
-  isolation: isolate;
-  background: #f3f0f3;
+.clients-showcase,
+.clients-showcase * {
+  box-sizing: border-box;
 }
 
-.clients-showcase-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: rgba(243, 240, 243, 0.58);
-  pointer-events: none;
+.clients-showcase {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 400px;
+  padding: clamp(55px, 7vw, 95px) 0;
+  overflow: hidden;
+  background: #f8f8f8;
+  color: #101010;
+  font-family: "Poppins", sans-serif;
 }
 
 .clients-showcase-content {
   position: relative;
-  z-index: 1;
   width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.clients-showcase-heading {
+  width: 100%;
+  padding: 0 5.5%;
+  margin-bottom: clamp(35px, 5vw, 60px);
+}
+
+.clients-showcase-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  color: #be61ac;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.clients-showcase-dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #be61ac;
+  box-shadow: 0 0 0 5px rgba(190, 97, 172, 0.12);
+  animation: clientDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes clientDotPulse {
+  50% {
+    box-shadow: 0 0 0 9px rgba(190, 97, 172, 0.03);
+  }
 }
 
 .clients-showcase-title {
-  margin: 0 0 35px;
-  text-align: center;
+  margin: 0;
   color: #101010;
-  font-family: "Poppins", sans-serif;
-  font-size: clamp(28px, 3vw, 42px);
-  font-weight: 500;
-  letter-spacing: -1px;
+  font-size: clamp(34px, 4.5vw, 55px);
+  font-weight: 600;
+  letter-spacing: -2px;
+  line-height: 1.1;
 }
 
-/* Logo rows */
+.clients-showcase-title span {
+  color: #be61ac;
+}
+
+.clients-showcase-heading p {
+  max-width: 520px;
+  margin: 15px 0 0;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   LOGO ROWS
+========================================= */
 
 .clients-logo-rows {
   display: flex;
   flex-direction: column;
-  gap: 28px;
   width: 100%;
+  gap: clamp(15px, 2vw, 24px);
 }
 
 .clients-marquee {
   position: relative;
+  display: block;
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
 }
 
-/* Fade edges */
+/* EDGE FADE */
 
 .clients-marquee::before,
 .clients-marquee::after {
   content: "";
   position: absolute;
+  z-index: 3;
   top: 0;
   bottom: 0;
-  width: 45px;
-  z-index: 2;
+  width: clamp(25px, 5vw, 75px);
   pointer-events: none;
 }
 
 .clients-marquee::before {
   left: 0;
-  background: linear-gradient(to right, #f3f0f3, transparent);
+  background: linear-gradient(to right, #f8f8f8, transparent);
 }
 
 .clients-marquee::after {
   right: 0;
-  background: linear-gradient(to left, #f3f0f3, transparent);
+  background: linear-gradient(to left, #f8f8f8, transparent);
 }
 
-/* Moving track */
+/* =========================================
+   ANIMATED TRACK
+========================================= */
 
 .clients-marquee-track {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 16px;
   width: max-content;
-  flex-shrink: 0;
+  flex-wrap: nowrap;
   will-change: transform;
 }
 
@@ -98,217 +152,428 @@
   animation-play-state: paused;
 }
 
-/* Equal logo positions */
-
-.client-logo-card {
-  width: 150px;
-  height: 65px;
-  flex: 0 0 150px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 8px 15px;
-  box-sizing: border-box;
-
-  background: transparent;
-  border: none;
-  overflow: visible;
-
-  transition: transform 0.3s ease;
-}
-
-/* Natural image dimensions with equal visual height */
-
-.client-logo-image {
-  display: block;
-
-  width: auto;
-  height: 38px;
-
-  max-width: 115px;
-  max-height: 38px;
-
-  object-fit: contain;
-  object-position: center;
-
-  filter: grayscale(100%);
-  opacity: 0.8;
-
-  transform: scale(1);
-  transition:
-    filter 0.3s ease,
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-/* Hover */
-
-.client-logo-card:hover {
-  z-index: 3;
-  transform: translateY(-3px);
-}
-
-.client-logo-card:hover .client-logo-image {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.12);
-}
-
-/* Animations */
-
 @keyframes clientsMoveLeft {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 @keyframes clientsMoveRight {
   from {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 
   to {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
-
-/* Tablet */
-
-@media (max-width: 900px) {
-  .client-logo-card {
-    width: 125px;
-    flex-basis: 125px;
-  }
-
-  .client-logo-image {
-    height: 34px;
-    max-width: 100px;
-    max-height: 34px;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-  .clients-showcase {
-    min-height: 280px;
-    padding: 45px 0;
-  }
-
-  .clients-showcase-title {
-    margin-bottom: 25px;
-  }
-
-  .clients-logo-rows {
-    gap: 18px;
-  }
-
-  .client-logo-card {
-    width: 105px;
-    height: 55px;
-    flex-basis: 105px;
-    padding: 5px 10px;
-  }
-
-  .client-logo-image {
-    height: 30px;
-    max-width: 85px;
-    max-height: 30px;
-  }
-
-  .move-left .clients-marquee-track {
-    animation-duration: 28s;
-  }
-
-  .move-right .clients-marquee-track {
-    animation-duration: 30s;
-  }
-}
-
-/* Accessibility */
-
-@media (prefers-reduced-motion: reduce) {
-  .move-left .clients-marquee-track,
-  .move-right .clients-marquee-track {
-    animation: none;
-  }
-}
-
-
 
 /* =========================================
-   FIX: REDUCE LOGO GAP + INCREASE PNG SIZE
+   LOGO CARDS
 ========================================= */
 
-/* Reduce vertical space between rows */
-.clients-logo-rows {
-  gap: 12px !important;
-}
-
-/* Reduce horizontal space between logos */
-.clients-marquee-track {
-  gap: 10px !important;
-}
-
-/* Reduce each logo's allocated space */
 .client-logo-card {
-  width: 125px !important;
-  height: 75px !important;
-  flex: 0 0 125px !important;
-  padding: 2px !important;
-  margin: 0 !important;
-
+  position: relative;
+  flex: 0 0 145px;
+  width: 145px;
+  height: 95px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid #ededed;
+  border-radius: 10px;
+  background: #ffffff;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
-/* Make actual PNG logos bigger */
+.client-logo-card:hover {
+  z-index: 2;
+  transform: translateY(-5px);
+  border-color: #be61ac;
+  box-shadow: 0 12px 25px rgba(16, 16, 16, 0.08);
+}
+
+/* LOGO IMAGES */
+
 .client-logo-image {
-  width: 100% !important;
-  height: 58px !important;
-
-  max-width: 123px !important;
-  max-height: 58px !important;
-
-  object-fit: contain !important;
-  object-position: center !important;
-
-  transform: scale(1.08);
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 125px;
+  max-height: 70px;
+  object-fit: contain;
+  object-position: center;
+  filter: grayscale(100%);
+  opacity: 0.82;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease,
+    opacity 0.4s ease;
 }
 
-/* Original colour on hover */
 .client-logo-card:hover .client-logo-image {
+  transform: scale(1.1);
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.16);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .clients-logo-rows {
-    gap: 8px !important;
+/* FALLBACK IF IMAGE DOES NOT LOAD */
+
+.client-logo-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #be61ac;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.client-logo-fallback[hidden] {
+  display: none !important;
+}
+
+/* =========================================
+   BOTTOM FOOTER
+========================================= */
+
+.clients-showcase-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 35px 5.5% 0;
+  padding-top: 18px;
+  border-top: 1px solid #e7e7e7;
+  color: #888888;
+  font-size: 9px;
+  letter-spacing: 1.3px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .clients-showcase {
+    padding: 65px 0;
   }
 
-  .clients-marquee-track {
-    gap: 8px !important;
+  .clients-showcase-heading {
+    margin-bottom: 40px;
   }
 
   .client-logo-card {
-    width: 105px !important;
-    height: 62px !important;
-    flex-basis: 105px !important;
+    flex-basis: 125px;
+    width: 125px;
+    height: 85px;
   }
 
   .client-logo-image {
-    height: 48px !important;
-    max-width: 103px !important;
-    max-height: 48px !important;
+    max-width: 110px;
+    max-height: 65px;
+  }
+
+  .clients-marquee-track {
+    gap: 12px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .clients-showcase {
+    padding: 50px 0;
+    min-height: 320px;
+  }
+
+  .clients-showcase-heading {
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+
+  .clients-showcase-title {
+    font-size: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .clients-showcase-heading p {
+    font-size: 11px;
+  }
+
+  .clients-logo-rows {
+    gap: 14px;
+  }
+
+  .clients-marquee-track {
+    gap: 10px;
+  }
+
+  .client-logo-card {
+    flex-basis: 105px;
+    width: 105px;
+    height: 75px;
+    padding: 8px;
+    border-radius: 8px;
+  }
+
+  .client-logo-image {
+    max-width: 90px;
+    max-height: 55px;
+  }
+
+  .clients-showcase-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 25px 20px 0;
+    font-size: 8px;
+    gap: 9px;
+  }
+
+  .move-left .clients-marquee-track {
+    animation-duration: 30s;
+  }
+
+  .move-right .clients-marquee-track {
+    animation-duration: 33s;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .clients-showcase-title {
+    font-size: 31px;
+  }
+
+  .client-logo-card {
+    flex-basis: 90px;
+    width: 90px;
+    height: 68px;
+  }
+
+  .client-logo-image {
+    max-width: 78px;
+    max-height: 48px;
+  }
+
+  .clients-marquee-track {
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .clients-marquee-track,
+  .clients-showcase-dot {
+    animation: none !important;
+  }
+
+  .client-logo-card,
+  .client-logo-image {
+    transition: none;
+  }
+}
+
+/* =========================================
+   FULL WIDTH CLIENT SHOWCASE FIX
+========================================= */
+
+section.clients-showcase {
+  display: block !important;
+  position: relative;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  flex: 0 0 100% !important;
+  grid-column: 1 / -1 !important;
+  align-self: stretch !important;
+  overflow: hidden !important;
+}
+
+.clients-showcase-content {
+  display: block !important;
+  width: 100% !important;
+  max-width: 1600px !important;
+  min-width: 0 !important;
+  margin: 0 auto !important;
+}
+
+.clients-logo-rows {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  gap: 20px !important;
+  overflow: hidden !important;
+}
+
+.clients-marquee {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 110px !important;
+  overflow: hidden !important;
+}
+
+.clients-marquee-track {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 16px !important;
+
+  width: max-content !important;
+  min-width: max-content !important;
+  height: 100% !important;
+
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  will-change: transform;
+}
+
+.client-logo-card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  position: relative !important;
+
+  flex: 0 0 145px !important;
+  width: 145px !important;
+  min-width: 145px !important;
+  max-width: 145px !important;
+
+  height: 90px !important;
+  padding: 10px !important;
+  margin: 0 !important;
+
+  background: #ffffff !important;
+  border: 1px solid #eeeeee !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+}
+
+.client-logo-image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 125px !important;
+  max-height: 70px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1200px) {
+  .clients-marquee {
+    height: 115px !important;
+  }
+
+  .client-logo-card {
+    flex-basis: 155px !important;
+    width: 155px !important;
+    min-width: 155px !important;
+    max-width: 155px !important;
+    height: 95px !important;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .clients-showcase {
+    padding: 60px 0 !important;
+  }
+
+  .clients-marquee {
+    height: 100px !important;
+  }
+
+  .client-logo-card {
+    flex-basis: 125px !important;
+    width: 125px !important;
+    min-width: 125px !important;
+    max-width: 125px !important;
+    height: 80px !important;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .clients-showcase {
+    padding: 45px 0 !important;
+  }
+
+  .clients-showcase-heading {
+    padding: 0 20px !important;
+  }
+
+  .clients-logo-rows {
+    gap: 12px !important;
+  }
+
+  .clients-marquee {
+    height: 82px !important;
+  }
+
+  .clients-marquee-track {
+    gap: 10px !important;
+  }
+
+  .client-logo-card {
+    flex-basis: 105px !important;
+    width: 105px !important;
+    min-width: 105px !important;
+    max-width: 105px !important;
+    height: 70px !important;
+    padding: 7px !important;
+  }
+
+  .client-logo-image {
+    max-width: 90px !important;
+    max-height: 55px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .client-logo-card {
+    flex-basis: 90px !important;
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+    height: 65px !important;
   }
 }
