@@ -36,55 +36,30 @@ const campaignImages = [
 
 
 const cards = [
-
   {
-
     n: "01",
-
     title: "Who we are",
-
     headline: "Creative minds. Measurable impact.",
-
-    text: "Optimising365 brings strategy, creativity, media, and technology together to help ambitious brands grow. We turn complex marketing challenges into clear plans and useful digital experiences.",
-
-    image: "/images/about/about-team.png",
-
-    alt: "Team collaborating",
-
+    text: "Optimising365 brings strategy, creativity, media, and technology together to help ambitious brands grow.",
+    image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&fm=png",
+    alt: "Creative team collaborating",
   },
-
   {
-
     n: "02",
-
     title: "What we do",
-
     headline: "From attention to action.",
-
-    text: "From digital strategy and paid media to creative campaigns, audience insights, and performance optimisation, we connect every activity to a business goal.",
-
-    image: "/images/about/about-strategy.jpg",
-
-    alt: "Marketing strategy planning",
-
+    text: "From digital strategy and paid media to creative campaigns, audience insights, and performance optimisation.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&fm=png",
+    alt: "Digital marketing analytics",
   },
-
   {
-
     n: "03",
-
     title: "How we work",
-
     headline: "Clear thinking. Open collaboration.",
-
-    text: "We work as an extension of your team: set shared goals, test ideas, learn from data, and keep improving. No mystery metrics—just transparent communication and progress you can understand.",
-
-    image: "/images/about/about-work.jpg",
-
-    alt: "Team planning a campaign",
-
+    text: "We work as an extension of your team: set shared goals, test ideas, learn from data, and keep improving.",
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&fm=png",
+    alt: "Business team planning",
   },
-
 ];
 
 
@@ -611,15 +586,11 @@ return (
 
       <div className="about-overview__image">
 
-        <img
-
-          src="/images/about/about-team.jpg"
-
-          alt="Team collaborating in a modern office"
-
-          loading="lazy"
-
-        />
+       <img
+  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&fm=png"
+  alt="Creative team collaborating"
+  loading="lazy"
+/>
 
       </div>
 
@@ -660,10 +631,10 @@ return (
 
     <div className="about-video-section__media">
       <img
-        src="/images/about/about-team.jpg"
-        alt="Optimising365 team collaborating on marketing ideas"
-        loading="lazy"
-      />
+  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&fm=png"
+  alt="Digital marketing analytics"
+  loading="lazy"
+/>
     </div>
   </div>
 </section>
@@ -699,11 +670,11 @@ return (
     </div>
 
     <div className="about-video-section__media">
-      <img
-        src="/images/about/about-team.jpg"
-        alt="Digital marketing strategy and campaign planning"
-        loading="lazy"
-      />
+     <img
+  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&fm=png"
+  alt="Team working together"
+  loading="lazy"
+/>
     </div>
   </div>
 </section>
