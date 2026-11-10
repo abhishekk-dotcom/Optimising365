@@ -301,7 +301,7 @@ function Navbar() {
 
 
             <NavLink
-              to="/work"
+              to="/OurWork"
               onClick={closeMobile}
               className="mobile-nav-link"
             >
