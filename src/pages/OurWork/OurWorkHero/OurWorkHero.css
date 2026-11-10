@@ -1,0 +1,1277 @@
+
+/* =================================
+   OPTIMISING365 - OUR WORK HERO
+================================= */
+
+.our-work-hero {
+  position: relative;
+  width: 100%;
+  min-height: 690px;
+  min-height: min(850px, calc(100svh - 85px));
+  overflow: hidden;
+  background: #f8f8f8;
+  color: #101010;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+
+.work-hero-bg-shape {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: #f0edf0;
+  top: 50%;
+  right: 8%;
+  transform: translateY(-50%);
+  z-index: -1;
+  animation: workBgFloat 9s ease-in-out infinite;
+}
+
+.work-hero-container {
+  width: 100%;
+  max-width: 1600px;
+  flex: 1;
+  margin: 0 auto;
+  padding: 65px 5.5% 55px;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: clamp(35px, 6vw, 100px);
+}
+
+/* LEFT CONTENT */
+
+.work-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 570px;
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+.work-hero-visible .work-hero-content {
+  animation: workContentReveal 1s ease forwards;
+}
+
+.work-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  color: #be61ac;
+  margin-bottom: 30px;
+}
+
+.work-eyebrow-dot,
+.work-video-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #be61ac;
+  box-shadow: 0 0 0 5px rgba(190, 97, 172, 0.12);
+  animation: workDotPulse 2s ease-in-out infinite;
+}
+
+.work-hero-title {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 35px;
+  font-size: clamp(75px, 10vw, 150px);
+  line-height: 0.78;
+  letter-spacing: -9px;
+  font-weight: 600;
+}
+
+.work-title-accent {
+  color: #be61ac;
+  animation: workTitleSlide 0.9s 0.15s both;
+}
+
+.work-title-second {
+  padding-left: 8%;
+  margin-top: 15px;
+  color: #101010;
+  animation: workTitleSlide 0.9s 0.3s both;
+}
+
+.work-title-dot {
+  color: #be61ac;
+}
+
+.work-hero-description {
+  max-width: 430px;
+  margin-top: 42px;
+  overflow: hidden;
+}
+
+.work-hero-description p {
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #292929;
+  margin: 0;
+}
+
+.work-hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.work-hero-button {
+  min-height: 52px;
+  padding: 5px 6px 5px 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  border: 1px solid #be61ac;
+  border-radius: 7px;
+  background: #be61ac;
+  color: #101010;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.work-button-arrow {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: #101010;
+  color: #fff;
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.work-hero-button:hover {
+  background: #db2777;
+  transform: translateY(-4px);
+}
+
+.work-hero-button:hover .work-button-arrow {
+  transform: rotate(45deg);
+}
+
+.work-hero-caption {
+  font-size: 11px;
+  color: #777;
+}
+
+/* RIGHT VIDEO */
+
+.work-hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  margin-left: auto;
+  padding: 30px 20px;
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.work-hero-visible .work-hero-visual {
+  animation: workVisualReveal 1.1s 0.25s ease forwards;
+}
+
+.work-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.12 / 1;
+  max-height: 510px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #111;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.13);
+  transform: rotate(2deg);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.work-hero-visual:hover .work-video-frame {
+  transform: rotate(0deg) scale(1.015);
+  box-shadow: 0 35px 80px rgba(190, 97, 172, 0.2);
+}
+
+.work-hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+
+.work-hero-visual:hover .work-hero-video {
+  transform: scale(1.04);
+}
+
+.work-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.08),
+    transparent 45%,
+    rgba(0, 0, 0, 0.5)
+  );
+  pointer-events: none;
+}
+
+.work-video-label {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  backdrop-filter: blur(12px);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.work-video-live-dot {
+  width: 6px;
+  height: 6px;
+  background: #be61ac;
+}
+
+.work-video-bottom {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+/* FLOATING CARDS */
+
+.work-floating-card {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 17px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  animation: workCardFloat 5s ease-in-out infinite;
+}
+
+.work-floating-card-one {
+  top: 4px;
+  left: -25px;
+}
+
+.work-floating-card-two {
+  right: -10px;
+  bottom: 5px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  animation-delay: -2.5s;
+}
+
+.floating-card-icon {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #f8e9f5;
+  color: #be61ac;
+  font-size: 20px;
+}
+
+.work-floating-card strong {
+  display: block;
+  font-size: 12px;
+}
+
+.work-floating-card small {
+  display: block;
+  color: #777;
+  font-size: 9px;
+}
+
+.floating-card-number {
+  color: #be61ac;
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+/* ORBIT DECORATION */
+
+.work-visual-orbit {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border: 1px solid rgba(190, 97, 172, 0.5);
+  border-radius: 50%;
+  right: -25px;
+  top: 5%;
+  animation: workOrbit 12s linear infinite;
+}
+
+.work-visual-orbit::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #be61ac;
+  top: 8px;
+  left: 10px;
+}
+
+/* FOOTER */
+
+.work-hero-footer {
+  width: 100%;
+  padding: 17px 5.5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid #e9e9e9;
+  color: #777;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+}
+
+.work-hero-decoration {
+  position: absolute;
+  bottom: 100px;
+  right: 3%;
+  width: 55px;
+  height: 1px;
+  background: #be61ac;
+  transform: rotate(-30deg);
+}
+
+/* ANIMATIONS */
+
+@keyframes workContentReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes workVisualReveal {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes workTitleSlide {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes workCardFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+@keyframes workBgFloat {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-48%) scale(1.06);
+  }
+}
+
+@keyframes workDotPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(190, 97, 172, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(190, 97, 172, 0.02);
+  }
+}
+
+@keyframes workOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+  .work-hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 65px 4%;
+  }
+
+  .work-hero-title {
+    font-size: clamp(70px, 9vw, 110px);
+    letter-spacing: -6px;
+  }
+
+  .work-hero-description p {
+    font-size: 13px;
+  }
+
+  .work-floating-card-one {
+    left: -10px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .our-work-hero {
+    min-height: auto;
+  }
+
+  .work-hero-bg-shape {
+    width: 400px;
+    height: 400px;
+    right: -200px;
+    top: 65%;
+  }
+
+  .work-hero-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 65px 22px 55px;
+  }
+
+  .work-hero-content {
+    max-width: 100%;
+  }
+
+  .work-hero-eyebrow {
+    margin-bottom: 25px;
+  }
+
+  .work-hero-title {
+    font-size: clamp(76px, 18vw, 115px);
+    letter-spacing: -6px;
+    margin-bottom: 25px;
+  }
+
+  .work-title-second {
+    padding-left: 7%;
+  }
+
+  .work-hero-description {
+    margin-top: 30px;
+  }
+
+  .work-hero-description p {
+    font-size: 13px;
+  }
+
+  .work-hero-visual {
+    width: calc(100% - 15px);
+    padding: 20px 8px;
+    margin: 0 auto;
+  }
+
+  .work-video-frame {
+    aspect-ratio: 1.15 / 1;
+    border-radius: 17px;
+  }
+
+  .work-floating-card-one {
+    top: 0;
+    left: -5px;
+  }
+
+  .work-floating-card-two {
+    right: -5px;
+    bottom: 0;
+  }
+
+  .work-floating-card {
+    padding: 10px 12px;
+  }
+
+  .work-floating-card strong {
+    font-size: 10px;
+  }
+
+  .work-floating-card small {
+    font-size: 8px;
+  }
+
+  .work-visual-orbit {
+    width: 55px;
+    height: 55px;
+    right: -10px;
+  }
+
+  .work-video-label {
+    top: 13px;
+    left: 13px;
+    font-size: 8px;
+  }
+
+  .work-video-bottom {
+    left: 13px;
+    right: 13px;
+    bottom: 13px;
+    font-size: 7px;
+  }
+
+  .work-hero-footer {
+    padding: 15px 20px;
+    font-size: 7px;
+    letter-spacing: 0.6px;
+  }
+
+  .work-hero-decoration {
+    display: none;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  .work-hero-container {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+  .work-hero-title {
+    font-size: 70px;
+    letter-spacing: -5px;
+  }
+
+  .work-hero-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .work-floating-card-two {
+    right: -2px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .our-work-hero *,
+  .our-work-hero *::before,
+  .our-work-hero *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =================================
+   CIRCULAR VIDEO FRAME
+================================= */
+
+.work-hero-visual {
+  position: relative;
+  width: 100%;
+  max-width: 660px;
+  aspect-ratio: 1;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.work-hero-visible .work-hero-visual {
+  animation: workVisualReveal 1.1s 0.25s ease forwards;
+}
+
+.work-video-frame {
+  position: relative;
+  width: min(100%, 560px);
+  aspect-ratio: 1 / 1;
+  max-height: none;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.16);
+  transform: none;
+  transition:
+    transform 0.7s ease,
+    box-shadow 0.7s ease;
+}
+
+/* Video fills the circle */
+
+.work-hero-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  transform: scale(1.01);
+  transition: transform 1s ease;
+}
+
+.work-hero-visual:hover .work-video-frame {
+  transform: scale(1.035);
+  box-shadow: 0 35px 90px rgba(190, 97, 172, 0.24);
+}
+
+.work-hero-visual:hover .work-hero-video {
+  transform: scale(1.09);
+}
+
+/* Circular video overlay */
+
+.work-video-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12),
+    transparent 45%,
+    rgba(0, 0, 0, 0.48)
+  );
+  pointer-events: none;
+}
+
+/* Video label */
+
+.work-video-label {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  backdrop-filter: blur(12px);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+.work-video-bottom {
+  position: absolute;
+  bottom: 12%;
+  left: 12%;
+  right: 12%;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+/* =================================
+   CIRCULAR BACKGROUND
+================================= */
+
+.work-hero-bg-shape {
+  position: absolute;
+  width: min(55vw, 700px);
+  aspect-ratio: 1;
+  height: auto;
+  border-radius: 50%;
+  background: #f0edf0;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  z-index: -1;
+  animation: workBgFloat 9s ease-in-out infinite;
+}
+
+/* =================================
+   FLOATING ELEMENTS
+================================= */
+
+.work-floating-card-one {
+  top: 8%;
+  left: 0;
+}
+
+.work-floating-card-two {
+  right: 0;
+  bottom: 8%;
+}
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+  .work-hero-visual {
+    max-width: 500px;
+  }
+
+  .work-video-frame {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .work-hero-visual {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .work-video-frame {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  .work-hero-video,
+  .work-video-overlay {
+    border-radius: 50%;
+  }
+
+  .work-video-label {
+    top: 12%;
+    left: 10%;
+    font-size: 7px;
+    padding: 7px 10px;
+  }
+
+  .work-video-bottom {
+    bottom: 12%;
+    left: 10%;
+    right: 10%;
+    font-size: 7px;
+  }
+
+  .work-floating-card-one {
+    top: 0;
+    left: 0;
+  }
+
+  .work-floating-card-two {
+    right: 0;
+    bottom: 0;
+  }
+
+  .work-hero-bg-shape {
+    width: 100vw;
+    right: -25%;
+    top: 75%;
+  }
+}
+
+@media (max-width: 380px) {
+  .work-hero-visual {
+    padding: 15px;
+  }
+
+  .work-floating-card {
+    padding: 8px;
+  }
+}
+
+/* =====================================
+   FIX: VIDEO INSIDE MOVING BACKGROUND
+===================================== */
+
+.our-work-hero {
+  overflow: hidden;
+}
+
+.work-hero-bg-shape {
+  width: min(58vw, 720px);
+  aspect-ratio: 1;
+  height: auto;
+  right: 5%;
+  top: 50%;
+  border-radius: 50%;
+}
+
+/* Move complete video visual into the background circle */
+.work-hero-visual {
+  width: min(52vw, 650px);
+  max-width: 650px;
+  aspect-ratio: 1;
+  margin-left: auto;
+  margin-right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transform: translateX(40px);
+}
+
+/* Keep video smaller than the background circle */
+.work-video-frame {
+  width: 80%;
+  max-width: 520px;
+  aspect-ratio: 1;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  transform: none;
+}
+
+/* Keep video clipped perfectly */
+.work-hero-video,
+.work-video-overlay {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Floating cards stay around the video */
+.work-floating-card-one {
+  top: 9%;
+  left: 0;
+}
+
+.work-floating-card-two {
+  right: 0;
+  bottom: 8%;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+  .work-hero-bg-shape {
+    width: 55vw;
+    right: 1%;
+  }
+
+  .work-hero-visual {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .work-video-frame {
+    width: 85%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .work-hero-bg-shape {
+    width: 100vw;
+    right: -15%;
+    top: 75%;
+  }
+
+  .work-hero-visual {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0;
+    transform: none;
+  }
+
+  .work-video-frame {
+    width: 82%;
+    max-width: none;
+  }
+}
+
+
+/* ==========================================
+   OPTIMISING365 OUR WORK HERO
+   RESPONSIVE FOR ALL DEVICES
+========================================== */
+
+/* Large desktop: 1440px and above */
+@media (min-width: 1440px) {
+  .work-hero-container {
+    max-width: 1800px;
+    padding-left: 7%;
+    padding-right: 7%;
+    gap: 65px;
+  }
+
+  .work-hero-title {
+    font-size: clamp(120px, 9vw, 155px);
+  }
+
+  .work-hero-visual {
+    width: min(52vw, 700px);
+    margin-right: 7%;
+  }
+
+  .work-video-frame {
+    width: 82%;
+  }
+
+  .work-hero-bg-shape {
+    width: min(58vw, 780px);
+  }
+}
+
+/* Laptop: 1025px–1366px */
+@media (min-width: 1001px) and (max-width: 1439px) {
+  .work-hero-container {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 25px;
+    padding: 55px 5%;
+  }
+
+  .work-hero-title {
+    font-size: clamp(85px, 9vw, 125px);
+    letter-spacing: -7px;
+  }
+
+  .work-hero-description {
+    max-width: 420px;
+  }
+
+  .work-hero-visual {
+    width: 100%;
+    max-width: 620px;
+    margin-right: 0;
+  }
+
+  .work-video-frame {
+    width: 82%;
+  }
+
+  .work-hero-bg-shape {
+    width: 58vw;
+    right: 2%;
+  }
+}
+
+/* Tablet landscape and portrait */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .our-work-hero {
+    min-height: auto;
+    height: auto;
+  }
+
+  .work-hero-container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 75px 4% 65px;
+  }
+
+  .work-hero-title {
+    font-size: clamp(65px, 9vw, 95px);
+    letter-spacing: -5px;
+  }
+
+  .work-title-second {
+    padding-left: 5%;
+  }
+
+  .work-hero-description {
+    margin-top: 30px;
+  }
+
+  .work-hero-description p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .work-hero-visual {
+    width: 100%;
+    max-width: 470px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .work-video-frame {
+    width: 86%;
+  }
+
+  .work-hero-bg-shape {
+    width: 55vw;
+    right: 0;
+    top: 50%;
+  }
+
+  .work-floating-card-one {
+    left: -2px;
+    top: 7%;
+  }
+
+  .work-floating-card-two {
+    right: -2px;
+    bottom: 7%;
+  }
+}
+
+/* Mobile and small tablets */
+@media (max-width: 700px) {
+  .our-work-hero {
+    min-height: auto;
+    height: auto;
+    max-height: none;
+  }
+
+  .work-hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 38px;
+    padding: 55px 22px 45px;
+  }
+
+  .work-hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .work-hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+  }
+
+  .work-hero-title {
+    font-size: clamp(76px, 16vw, 110px);
+    letter-spacing: -6px;
+    line-height: 0.82;
+    margin-bottom: 25px;
+  }
+
+  .work-title-second {
+    padding-left: 6%;
+    margin-top: 12px;
+  }
+
+  .work-hero-description {
+    margin-top: 30px;
+    max-width: 480px;
+  }
+
+  .work-hero-description p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .work-hero-actions {
+    margin-top: 25px;
+  }
+
+  /* Circle background */
+  .work-hero-bg-shape {
+    width: 105vw;
+    max-width: 600px;
+    right: -28%;
+    top: 75%;
+    transform: translateY(-50%);
+  }
+
+  /* Video stays inside background circle */
+  .work-hero-visual {
+    width: 100%;
+    max-width: 490px;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: none;
+  }
+
+  .work-video-frame {
+    width: 82%;
+    max-width: none;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  .work-hero-video,
+  .work-video-overlay {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .work-video-label {
+    top: 12%;
+    left: 12%;
+    font-size: 7px;
+    padding: 7px 10px;
+  }
+
+  .work-video-bottom {
+    left: 12%;
+    right: 12%;
+    bottom: 12%;
+    font-size: 7px;
+    letter-spacing: 0.8px;
+  }
+
+  .work-floating-card-one {
+    left: 0;
+    top: 6%;
+  }
+
+  .work-floating-card-two {
+    right: 0;
+    bottom: 6%;
+  }
+
+  .work-floating-card {
+    padding: 9px 11px;
+    gap: 8px;
+  }
+
+  .work-floating-card strong {
+    font-size: 10px;
+  }
+
+  .work-floating-card small {
+    font-size: 8px;
+  }
+
+  .floating-card-number {
+    font-size: 24px;
+  }
+
+  .work-visual-orbit {
+    width: 55px;
+    height: 55px;
+    right: -5px;
+  }
+
+  .work-hero-footer {
+    padding: 15px 20px;
+    font-size: 7px;
+    letter-spacing: 0.6px;
+  }
+
+  .work-hero-decoration {
+    display: none;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .work-hero-container {
+    padding: 45px 18px 35px;
+    gap: 30px;
+  }
+
+  .work-hero-title {
+    font-size: clamp(70px, 17vw, 90px);
+    letter-spacing: -5px;
+  }
+
+  .work-hero-description p {
+    font-size: 12px;
+  }
+
+  .work-hero-visual {
+    width: 100%;
+    max-width: 390px;
+  }
+
+  .work-video-frame {
+    width: 82%;
+  }
+
+  .work-video-label {
+    font-size: 6px;
+    padding: 6px 8px;
+    gap: 7px;
+  }
+
+  .work-video-bottom {
+    font-size: 6px;
+  }
+
+  .work-floating-card {
+    padding: 7px 9px;
+  }
+
+  .floating-card-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 15px;
+  }
+
+  .work-hero-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .work-hero-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .work-hero-title {
+    font-size: 66px;
+    letter-spacing: -4px;
+  }
+
+  .work-hero-button {
+    gap: 15px;
+    padding-left: 14px;
+    font-size: 11px;
+  }
+
+  .work-hero-visual {
+    max-width: 330px;
+  }
+
+  .work-video-frame {
+    width: 80%;
+  }
+
+  .work-video-bottom {
+    font-size: 5px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .work-hero-bg-shape,
+  .work-floating-card,
+  .work-visual-orbit,
+  .work-eyebrow-dot {
+    animation: none !important;
+  }
+}
+

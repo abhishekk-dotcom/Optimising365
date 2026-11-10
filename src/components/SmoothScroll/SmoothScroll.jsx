@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Lenis from "lenis";
 
@@ -9,8 +10,10 @@ function SmoothScroll() {
       touchMultiplier: 1.5,
     });
 
+    // Make Lenis accessible to ScrollToTop
+    window.lenis = lenis;
+
     let animationFrame;
-    
 
     const raf = (time) => {
       lenis.raf(time);
@@ -21,6 +24,7 @@ function SmoothScroll() {
 
     return () => {
       cancelAnimationFrame(animationFrame);
+      delete window.lenis;
       lenis.destroy();
     };
   }, []);

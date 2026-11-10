@@ -1,0 +1,39 @@
+
+/* OUR WORK - VISIBILITY FIX */
+
+.our-work-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: clip;
+  background: #f8f8f8;
+  color: #101010;
+}
+
+.our-work-page section {
+  visibility: visible;
+}
+
+.our-work-page .project-reveal,
+.our-work-page .project-visible,
+.our-work-page .work-project-card,
+.our-work-page .our-work-hero,
+.our-work-page .our-work-projects {
+  visibility: visible;
+}
+
+/* Prevent sections from remaining hidden */
+.our-work-page .project-reveal:not(.project-visible) {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.our-work-page .work-project-card {
+  opacity: 1 !important;
+}
+
+/* Keep video visible */
+.our-work-page video {
+  display: block;
+  max-width: 100%;
+}

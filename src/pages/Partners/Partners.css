@@ -1,0 +1,33 @@
+
+.partners-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+  color: #101010;
+  font-family: "Poppins", sans-serif;
+}
+
+.partners-page *,
+.partners-page *::before,
+.partners-page *::after {
+  box-sizing: border-box;
+}
+
+.partners-page img {
+  max-width: 100%;
+}
+
+.partners-page button,
+.partners-page a {
+  font-family: inherit;
+}
+
+.partners-page section {
+  width: 100%;
+}
+
+.partners-page ::selection {
+  background: #be61ac;
+  color: #ffffff;
+}

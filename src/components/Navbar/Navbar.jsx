@@ -150,7 +150,7 @@ function Navbar() {
 
 
             <NavLink
-              to="/work"
+              to="/OurWork"
               className={({ isActive }) =>
                 `nav-link gooey  ${
                   isActive ? "active" : ""
@@ -162,7 +162,7 @@ function Navbar() {
 
 
             <NavLink
-              to="/CaseStudies"
+              to="/CaseStudy"
               className={({ isActive }) =>
                 `nav-link gooey ${
                   isActive ? "active" : ""
@@ -311,7 +311,7 @@ function Navbar() {
 
 
             <NavLink
-              to="/CaseStudies"
+              to="/CaseStudy"
               onClick={closeMobile}
               className="mobile-nav-link"
             >
