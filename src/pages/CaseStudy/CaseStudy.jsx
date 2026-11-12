@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./CaseStudy.css";
+import Footer from "../../components/Footer/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -242,7 +243,7 @@ const caseStudies = {
     ],
   },
   "future-crafted": {
-    number: "11",
+    number: "04",
     title: "Future Crafted",
     category: "WEB / EXPERIENCE",
     client: "Modern Business",
@@ -363,6 +364,7 @@ export default function CaseStudy() {
           Start a project <span>↗</span>
         </Link>
       </section>
+      <Footer />
 
     </main>
   );

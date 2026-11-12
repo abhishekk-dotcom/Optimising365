@@ -390,14 +390,14 @@
 .contact-bottom-cta {
   padding: 120px 8%;
   text-align: center;
-  background: #101010;
-  color: white;
+  background: #ffff;
+  color: rgb(8, 7, 7);
 }
 
 .contact-bottom-cta > span {
   font-size: 10px;
   letter-spacing: 2px;
-  color: #aaa;
+  color: #080808;
 }
 
 .contact-bottom-cta h2 {

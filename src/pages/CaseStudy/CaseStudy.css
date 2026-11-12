@@ -314,8 +314,8 @@
 .case-next {
   padding: 120px 8%;
   text-align: center;
-  color: white;
-  background: #101010;
+  color: rgb(13, 12, 12);
+  background: #ffff;
 }
 
 .case-next > span {

@@ -3,39 +3,69 @@ import "./ClientsHero.css";
 
 const projects = [
   {
-    name: "Nova",
-    category: "Brand Identity",
-    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=700&q=85",
-  },
-  {
-    name: "Digital Experiences",
-    category: "Web Design",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700&q=85",
-  },
-  {
-    name: "Creative Studio",
-    category: "Creative Campaign",
-    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=700&q=85",
-  },
-  {
-    name: "Growth Project",
+    name: "avosend",
     category: "Digital Marketing",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=85",
+    image: "./images/clients/clientHero/avosend.jpeg",
   },
   {
-    name: "Brand Stories",
-    category: "Social Media",
-    image: "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=700&q=85",
+    name: "Digido",
+    category: "Digital Marketing",
+    image: "./images/clients/clientHero/avosend.png",
   },
   {
-    name: "Modern Business",
-    category: "Website Development",
-    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=700&q=85",
+    name: "Betway",
+    category: "Digital Marketing",
+    image: "./images/clients/clientHero/betway.png",
   },
   {
-    name: "Visual Campaign",
+    name: "Digido",
+    category: "Digital Marketing",
+    image: "./images/clients/clientHero/digido.webp",
+  },
+  {
+    name: "Floatme",
+    category: "Digital Marketing",
+    image: "./images/clients/clientHero/floatme.webp",
+  },
+  {
+    name: "Kralen",
+    category: "Digital Marketing",
+    image: "./images/clients/clientHero/kralen.webp",
+  },
+  {
+    name: "MoneyMan",
     category: "Branding",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=700&q=85",
+    image: "./images/clients/clientHero/moneyman.webp",
+  },
+  {
+    name: "MoneyMan",
+    category: "Branding",
+    image: "./images/clients/clientHero/moneyman2.webp",
+  },
+  {
+    name: "SignNow",
+    category: "Branding",
+    image: "./images/clients/clientHero/signnow.webp",
+  },
+  {
+    name: "Snoop",
+    category: "Branding",
+    image: "./images/clients/clientHero/snoop.webp",
+  },
+  {
+    name: "Underdog",
+    category: "Branding",
+    image: "./images/clients/clientHero/underdog.webp",
+  },
+  {
+    name: "Western Union",
+    category: "Branding",
+    image: "./images/clients/clientHero/westernUnion.webp",
+  },
+  {
+    name: "Zaimer",
+    category: "Branding",
+    image: "./images/clients/clientHero/zaymer.avif",
   },
 ];
 

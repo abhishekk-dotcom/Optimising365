@@ -92,10 +92,15 @@ export default function Footer() {
         </div>
       </div>
 
+{/* Bottom-right oversized brand typography */}
+<div className="footer-brand-watermark" aria-hidden="true">
+  <span className="footer-brand-name">OPTIMISING</span>
+  <span className="footer-brand-number">365</span>
+</div>
       {/* Footer bottom */}
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} Optimising365. All rights reserved.</span>
-        <span>Strategy. Creativity. Performance.</span>
+        <span>© {new Date().getFullYear()} Optimising365..</span>
+        {/* <span>Strategy. Creativity. Performance.</span> */}
       </div>
     </footer>
   );

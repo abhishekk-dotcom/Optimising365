@@ -15,6 +15,7 @@ import {
 } from "react-icons/fi";
 
 import "./Contact.css";
+import Footer from "../../components/Footer/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -381,7 +382,7 @@ ${formData.message}`
           START YOUR PROJECT <FiArrowUpRight />
         </a>
       </section>
-
+      <Footer />
     </main>
   );
 }

@@ -6,43 +6,103 @@ const partnerProjects = [
     name: "Media Network",
     category: "Media Partners",
     image:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=85",
+      "./images/partners/partnerHero/Adjust1.png",
   },
   {
     name: "Technology Alliance",
     category: "Technology Partners",
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=85",
+      "./images/partners/partnerHero/Adjust2.png",
   },
   {
     name: "Creative Agency",
     category: "Agency Partners",
     image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=85",
+      "./images/partners/partnerHero/Adjust3.png",
   },
   {
     name: "Growth Network",
     category: "Strategic Partners",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=85",
+      "./images/partners/partnerHero/Appsflyer1.png",
   },
   {
     name: "Digital Innovation",
     category: "Technology Partners",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=85",
+      "./images/partners/partnerHero/Appsflyer2.png",
   },
   {
     name: "Creative Collaboration",
     category: "Agency Partners",
     image:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=85",
+      "./images/partners/partnerHero/Appsflyer3.webp",
   },
   {
     name: "Media Campaign",
     category: "Media Partners",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=85",
+      "./images/partners/partnerHero/Apptrove.jpg",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/Apptrove1.png",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/Apptrove2.jpg",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/Apptrove3.png",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/Branch.jpg",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/Branch2.png",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/branch3.png",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/singular.png",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/Singular2.png",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/Singular3.jpeg",
+  },
+  {
+    name: "Media Campaign",
+    category: "Media Partners",
+    image:
+      "./images/partners/partnerHero/Singular4.png",
   },
 ];
 
